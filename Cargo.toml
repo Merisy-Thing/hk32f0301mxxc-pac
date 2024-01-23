@@ -1,0 +1,16 @@
+[package]
+name = "hk32f0301mxxc-pac"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+critical-section = { version = "1.0", optional = true }
+cortex-m = "0.7.7"
+cortex-m-rt = { version = "0.7.3", optional = true }
+vcell = "0.1.2"
+
+[features]
+default = ["critical-section", "rt"]
+rt = ["cortex-m-rt/device"]

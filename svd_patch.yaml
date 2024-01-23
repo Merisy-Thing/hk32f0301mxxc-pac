@@ -1,0 +1,74 @@
+_svd: "./HK32F0301MxxC.svd"
+
+RCC:
+  CR:
+    HSION:
+      "Off": [0, "关闭 HSI"]
+      "On": [1, "打开 HSI"]
+    HSIRDY:
+      _read:
+        NotReady: [0, "HSI 未稳定"]
+        Ready: [1, "HSI 已稳定"]
+    HSICAL: [0, 63]
+    HSITRIM: [0, 63]
+    EXTCLKON:
+      "Off": [0, "关闭 GPIO 输入时钟"]
+      "On": [1, "使能 GPIO 输入时钟"]
+    EXTCLKRDY:
+      _read:
+        NotReady: [0, "GPIO 输入时钟未稳定"]
+        Ready: [1, "GPIO 输入时钟稳定"]
+    CSSON:
+      "Off": [0, "0：关闭时钟检测"]
+      "On": [1, "开启时钟检测"]
+  CFGR:
+    PPRE:
+      Div1: [0, "HCLK not divided"] # Same for [0, 3]
+      Div2: [4, "HCLK divided by 2"]
+      Div4: [5, "HCLK divided by 4"]
+      Div8: [6, "HCLK divided by 8"]
+      Div16: [7, "HCLK divided by 16"]
+    HPRE:
+      Div1: [0, "SYSCLK not divided"] # Same for [0, 7]
+      Div2: [8, "SYSCLK divided by 2"]
+      Div4: [9, "SYSCLK divided by 4"]
+      Div8: [10, "SYSCLK divided by 8"]
+      Div16: [11, "SYSCLK divided by 16"]
+      Div64: [12, "SYSCLK divided by 64"]
+      Div128: [13, "SYSCLK divided by 128"]
+      Div256: [14, "SYSCLK divided by 256"]
+      Div512: [15, "SYSCLK divided by 512"]
+    SWS:
+      _read:
+        HSI: [0, "HSI oscillator used as system clock"]
+        HSE: [1, "HSE oscillator used as system clock"]
+        PLL: [2, "Reserved"]
+        LSI: [3, "LSI used as system clock "]
+    SW:
+      HSI: [0, "HSI selected as system clock"]
+      HSE: [1, "HSE selected as system clock"]
+      PLL: [2, "Reserved"]
+      LSI: [3, "LSI selected as system clock"]
+
+IWDG:
+  KR:
+    KEY:
+      Enable: [21845, "Enable access to PR, RLR and WINR registers (0x5555)"]
+      Reset: [43690, "Reset the watchdog value (0xAAAA)"]
+      Start: [52428, "Start the watchdog (0xCCCC)"]
+  PR:
+    PR:
+      DivideBy4: [0, "Divider /4"]
+      DivideBy8: [1, "Divider /8"]
+      DivideBy16: [2, "Divider /16"]
+      DivideBy32: [3, "Divider /32"]
+      DivideBy64: [4, "Divider /64"]
+      DivideBy128: [5, "Divider /128"]
+      DivideBy256: [6, "Divider /256"]
+      DivideBy256bis: [7, "Divider /256"]
+  RLR:
+    RL: [0, 4095]
+
+
+
+
